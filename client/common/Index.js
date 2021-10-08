@@ -3,6 +3,6 @@ import Layout from './layout';
 
 export default () => (
   <Layout>
-    <img src="/img/b2.jpg" className="app__splash-screen" />
+    <img src="/img/s1.jpg" className="app__splash-screen" />
   </Layout>
 );

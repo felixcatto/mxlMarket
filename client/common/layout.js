@@ -17,22 +17,13 @@ export default ({ children }) => {
       <div className="app__header">
         <div className="container app__header-fg">
           <div className="d-flex align-items-center">
-            <img src="/img/blizzard.svg" className="app__logo mr-30" />
+            <img src="/img/bag.png" className="app__logo mr-30" />
             <div className="d-flex">
               <a href={urlFor('home')} className={linkClass(urlFor('home'))}>
                 Home
               </a>
               <a href={urlFor('users')} className={linkClass(urlFor('users'))}>
                 Users
-              </a>
-              <a href={urlFor('articles')} className={linkClass(urlFor('articles'))}>
-                Articles
-              </a>
-              <a href={urlFor('tags')} className={linkClass(urlFor('tags'))}>
-                Tags
-              </a>
-              <a href={urlFor('structure')} className={linkClass(urlFor('structure'))}>
-                Project Structure
               </a>
             </div>
           </div>

@@ -1,6 +1,6 @@
 # Description
 
-MVC app using  react + fastify + objection orm. Traditional blog with ability to add articles, tags and comments. Also have users and authentification
+MVC app using  react + fastify + objection orm.
 
 ### Commands
 

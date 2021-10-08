@@ -53,17 +53,17 @@ migrate-list:
 	npx knex migrate:list
 
 database-build:
-	docker build -t mxlMarket_database services/database
+	docker build -t mxlmarket_database services/database
 
 database-up:
 	docker run --rm -d -e POSTGRES_PASSWORD=1 \
 	-p 5432:5432 \
-	-v mxlMarket_database:/var/lib/postgresql/data \
-	--name=mxlMarket_database \
-	mxlMarket_database
+	-v mxlmarket_database:/var/lib/postgresql/data \
+	--name=mxlmarket_database \
+	mxlmarket_database
 
 database-down:
-	docker stop mxlMarket_database
+	docker stop mxlmarket_database
 
 database-seed:
 	npx knex --esm seed:run

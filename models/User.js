@@ -9,28 +9,6 @@ export class User extends Model {
     return 'users';
   }
 
-  static get relationMappings() {
-    return {
-      articles: {
-        relation: Model.HasManyRelation,
-        modelClass: path.resolve(__dirname, 'Article.js'),
-        join: {
-          from: 'users.id',
-          to: 'articles.author_id',
-        },
-      },
-
-      comments: {
-        relation: Model.HasManyRelation,
-        modelClass: path.resolve(__dirname, 'Comment.js'),
-        join: {
-          from: 'users.id',
-          to: 'comments.author_id',
-        },
-      },
-    };
-  }
-
   static get guestUser() {
     return {
       id: '-1',

@@ -1,7 +1,10 @@
+@use "sass:math";
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import './fontawesome.min.css';
 @import './solid.min.css';
 @import './scssHelpers.scss';
+
+$cprimary: #6a1b9a;
 
 html {
   font-size: 18px;
@@ -19,7 +22,7 @@ html {
 
 body {
   font-family: SSPR, 'ubuntu', 'Comic Sans MS';
-  background-image: url('/img/b1.jpg');
+  background-image: url('/img/s1.jpg');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -29,6 +32,13 @@ h1,
 h2,
 h3 {
   font-family: SSPL;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 input.form-control,
@@ -55,7 +65,7 @@ select.form-control:focus {
 }
 
 .fa {
-  color: steelblue;
+  color: $cprimary;
   &_big {
     padding: 2px 5px;
   }
@@ -93,7 +103,7 @@ select.form-control:focus {
 }
 
 .steelblue {
-  color: steelblue;
+  color: $cprimary;
 }
 
 // spinner START
@@ -110,7 +120,7 @@ $duration: 1.8s;
     stroke-dashoffset: 0;
     transform-origin: center;
     animation: dash $duration ease-in-out infinite;
-    stroke: steelblue;
+    stroke: $cprimary;
     fill: none;
     stroke-linecap: round;
     r: 30;
@@ -137,7 +147,7 @@ $duration: 1.8s;
     stroke-dashoffset: $offset;
   }
   50% {
-    stroke-dashoffset: $offset/4;
+    stroke-dashoffset: math.div($offset, 4);
     transform: rotate(135deg);
   }
   100% {
@@ -151,7 +161,7 @@ $duration: 1.8s;
     stroke-dashoffset: $offsetBold;
   }
   50% {
-    stroke-dashoffset: $offsetBold/4;
+    stroke-dashoffset: math.div($offsetBold, 4);
     transform: rotate(135deg);
   }
   100% {
@@ -164,18 +174,18 @@ $duration: 1.8s;
 .app {
   &__header {
     position: relative;
-    background: steelblue;
+    background: $cprimary;
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.5);
   }
   &__header-fg {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
+    padding: 5px 15px;
     color: #fff;
   }
   &__logo {
-    width: 30px;
+    height: 54px;
   }
   &__user-role-icon {
     color: #fff;
@@ -211,11 +221,11 @@ $duration: 1.8s;
     }
     &_active {
       background: #fff;
-      color: steelblue;
+      color: $cprimary;
       &:hover {
-        color: steelblue;
-        text-decoration: none;
+        color: $cprimary;
         cursor: default;
+        text-decoration: none;
       }
     }
   }

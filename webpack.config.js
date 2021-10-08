@@ -1,6 +1,5 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const babelConfig = require('./babelconfig.js');
@@ -54,7 +53,6 @@ const common = {
     new WebpackManifestPlugin({ publicPath: '/' }),
   ],
   optimization: {
-    minimizer: [`...`, new CssMinimizerPlugin()],
     splitChunks: {
       cacheGroups: {
         styles: {

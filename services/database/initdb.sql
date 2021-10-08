@@ -1,2 +1,2 @@
-create database mxlMarket_test;
-create database mxlMarket;
+create database mxlmarket_test;
+create database mxlmarket;
