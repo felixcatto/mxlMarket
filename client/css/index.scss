@@ -1,0 +1,235 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import './fontawesome.min.css';
+@import './solid.min.css';
+@import './scssHelpers.scss';
+
+html {
+  font-size: 18px;
+}
+
+@font-face {
+  font-family: SSPR;
+  src: url('/font/SourceSansProR.ttf');
+}
+
+@font-face {
+  font-family: SSPL;
+  src: url('/font/SourceSansProL.ttf');
+}
+
+body {
+  font-family: SSPR, 'ubuntu', 'Comic Sans MS';
+  background-image: url('/img/b1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  font-family: SSPL;
+}
+
+input.form-control,
+input.form-control:focus,
+textarea.form-control,
+textarea.form-control:focus,
+select.form-control,
+select.form-control:focus {
+  color: #222;
+}
+
+.turbo-progress-bar {
+  background-color: #fff;
+}
+
+.btn {
+  padding-top: 4px;
+}
+
+.form-control {
+  &__inline {
+    width: auto;
+  }
+}
+
+.fa {
+  color: steelblue;
+  &_big {
+    padding: 2px 5px;
+  }
+  &_link {
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+      text-decoration: none;
+      color: #0056b3;
+    }
+  }
+}
+
+.clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.fake-link {
+  display: inline-block;
+  &__button {
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+}
+
+.error {
+  color: #c9302c;
+}
+
+.text-light {
+  font-size: 0.75rem;
+  color: #6e7582 !important;
+}
+
+.steelblue {
+  color: steelblue;
+}
+
+// spinner START
+$offset: 187;
+$offsetBold: 180;
+$duration: 1.8s;
+
+.spinner {
+  width: 25px;
+  height: 25px;
+  animation: rotator $duration linear infinite;
+  &__path {
+    stroke-dasharray: $offset;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation: dash $duration ease-in-out infinite;
+    stroke: steelblue;
+    fill: none;
+    stroke-linecap: round;
+    r: 30;
+    stroke-width: 6;
+    &_bold {
+      r: 24;
+      stroke-width: 9;
+      animation: dashbold $duration ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: $offset;
+  }
+  50% {
+    stroke-dashoffset: $offset/4;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: $offset;
+    transform: rotate(450deg);
+  }
+}
+
+@keyframes dashbold {
+  0% {
+    stroke-dashoffset: $offsetBold;
+  }
+  50% {
+    stroke-dashoffset: $offsetBold/4;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: $offsetBold;
+    transform: rotate(450deg);
+  }
+}
+// spinner END
+
+.app {
+  &__header {
+    position: relative;
+    background: steelblue;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.5);
+  }
+  &__header-fg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    color: #fff;
+  }
+  &__logo {
+    width: 30px;
+  }
+  &__user-role-icon {
+    color: #fff;
+  }
+  &__sign-in {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  &__sign-in:hover &__sign-in-text {
+    text-decoration: underline;
+  }
+  &__sign-icon {
+    margin-right: -10px;
+    padding: 4px 10px;
+    color: #fff;
+  }
+  &__nav-link {
+    padding: 0px 6px;
+    padding-bottom: 2px;
+    margin-right: 20px;
+    border-radius: 12px;
+    color: #fff;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      color: #fff;
+    }
+    &_active {
+      background: #fff;
+      color: steelblue;
+      &:hover {
+        color: steelblue;
+        text-decoration: none;
+        cursor: default;
+      }
+    }
+  }
+  &__body {
+    min-height: calc(100vh - 60px);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #fff;
+    box-shadow: inset 12px 0 25px -15px rgba(0, 0, 0, 0.9),
+      inset -12px 0 25px -15px rgba(0, 0, 0, 0.9);
+  }
+  &__splash-screen {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+  }
+}

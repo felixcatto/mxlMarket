@@ -1,0 +1,33 @@
+version: '3'
+
+volumes:
+  database:
+
+services:
+  app:
+    build: .
+    ports:
+      - 4000:4000
+    depends_on:
+      - database
+    environment:
+      - PORT=4000
+      - NODE_ENV=production
+      - POSTGRES_HOST=database
+
+  database:
+    build: services/database
+    volumes:
+      - database:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=1
+
+  nginx:
+    build: services/nginx
+    ports:
+      - 80:80
+    depends_on:
+      - app
+    environment:
+      - APP_HOST=app
+      - APP_PORT=4000
