@@ -5,6 +5,7 @@
 @import './scssHelpers.scss';
 
 $cprimary: #6a1b9a;
+$cprimary-light: #8e24aa;
 
 html {
   font-size: 18px;
@@ -57,6 +58,23 @@ select.form-control:focus {
 .btn {
   padding-top: 4px;
 }
+.btn-primary {
+  background: $cprimary;
+  border-color: $cprimary;
+  &:hover {
+    background: $cprimary-light;
+    border-color: $cprimary-light;
+  }
+}
+.btn-outline-primary {
+  color: $cprimary;
+  border-color: $cprimary;
+  &:hover {
+    color: #fff;
+    background: $cprimary-light;
+    border-color: $cprimary-light;
+  }
+}
 
 .form-control {
   &__inline {
@@ -102,7 +120,7 @@ select.form-control:focus {
   color: #6e7582 !important;
 }
 
-.steelblue {
+.primary {
   color: $cprimary;
 }
 

@@ -5,7 +5,7 @@ import { Link, userRolesToIcons } from '../lib/utils';
 
 export default ({ children }) => {
   const { urlFor, curPath, currentUser, isSignedIn } = React.useContext(Context);
-  const linkClass = linkPath =>
+  const linkClass = (linkPath = '#') =>
     cn('app__nav-link', {
       'app__nav-link_active':
         (linkPath === '/' && curPath === '/') || (linkPath !== '/' && curPath.startsWith(linkPath)),
@@ -24,6 +24,18 @@ export default ({ children }) => {
               </a>
               <a href={urlFor('users')} className={linkClass(urlFor('users'))}>
                 Users
+              </a>
+              <a href="#" className={linkClass()}>
+                My WTS
+              </a>
+              <a href="#" className={linkClass()}>
+                My WTB
+              </a>
+              <a href="#" className={linkClass()}>
+                WTS
+              </a>
+              <a href="#" className={linkClass()}>
+                WTB
               </a>
             </div>
           </div>
