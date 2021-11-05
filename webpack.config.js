@@ -16,10 +16,11 @@ const common = {
     filename: isProduction ? 'js/[name].[contenthash:8].js' : 'js/[name].js',
     path: path.resolve(__dirname, 'dist/public'),
   },
+  resolve: { extensions: ['.tsx', '.ts', '.js'] },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /(\.js$|\.ts$|\.tsx)/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -30,6 +31,7 @@ const common = {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
+          { loader: 'css-modules-typescript-loader' },
           {
             loader: 'css-loader',
             options: {

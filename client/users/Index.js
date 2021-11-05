@@ -2,12 +2,13 @@ import React from 'react';
 import cn from 'classnames';
 import Layout from '../common/layout';
 import { Link, userRolesToIcons } from '../lib/utils';
+import s from './styles.module.scss';
 
 const userIconClass = role => cn('mr-5', userRolesToIcons[role]);
 
 export default ({ urlFor, users, isAdmin }) => (
   <Layout>
-    <h3>Users List</h3>
+    <h3 className={s.test}>Users List</h3>
 
     {isAdmin && (
       <a href={urlFor('newUser')} className="d-inline-block mb-30">
